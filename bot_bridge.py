@@ -1,13 +1,17 @@
 from telethon import TelegramClient, events
 from engine import is_relevant, format_job
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 seen_jobs = set()
 
 # ----------------------------
 # TELETHON SETUP
 # ----------------------------
-api_id = 39750632
-api_hash = "7d6ce24ee258d5a8a1176168dc305c2a"
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
 
 client = TelegramClient("session", api_id, api_hash)
 

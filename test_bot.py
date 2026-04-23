@@ -1,7 +1,11 @@
 import asyncio
 from telegram import Bot
+import os
+from dotenv import load_dotenv
 
-BOT_TOKEN = "8736836984:AAFeKHHU2KFBcKpEz-NT1eXSwrZhLTn1LfY"
+load_dotenv()
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = "@AT_Tech_stream"
 
 async def main():
